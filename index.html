@@ -17,22 +17,23 @@
 
     <!-- CABEÇALHO / MENU -->
     <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="#inicio" class="flex flex-col py-2">
-                <span class="text-2xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="#inicio" class="flex flex-col py-1">
+                <span class="text-xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     Elunari Tech
                 </span>
-                <span class="text-sm text-slate-400 -mt-1 hidden sm:block font-medium">Apps, Sistemas & Soluções Tecnológicas</span>
+                <span class="text-xs text-slate-400 -mt-1 hidden sm:block font-medium">Apps, Sistemas & Soluções Tecnológicas</span>
             </a>
-            <nav class="hidden md:flex gap-6 text-base font-medium text-slate-300">
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
                 <a href="#inicio" class="hover:text-cyan-400 transition">Início</a>
                 <a href="#sobre" class="hover:text-cyan-400 transition">Quem Somos</a>
                 <a href="#projetos" class="hover:text-cyan-400 transition">Softwares & Downloads</a>
                 <a href="#pesquisa" class="hover:text-cyan-400 transition">Pesquisa & P&D</a>
                 <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
             </nav>
-            <a href="https://wa.me/5551989037674" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg text-base font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-900/20">
-                <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
+            <!-- Botão WhatsApp no Cabeçalho (Proporcional ao topo) -->
+            <a href="https://wa.me/5551989037674" target="_blank" class="bg-emerald-600/90 hover:bg-emerald-500 text-white px-3.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5 shadow-md shadow-emerald-950/40">
+                <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
             </a>
         </div>
     </header>
@@ -158,8 +159,6 @@
                     </button>
                 </div>
             </div>
-
-            <!-- PROJETOS EM DESENVOLVIMENTO -->
 
             <!-- Passa ou Repassa -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
@@ -294,7 +293,7 @@
     <!-- CONTATO -->
     <section id="contato" class="py-20 px-4 max-w-4xl mx-auto text-center">
         <h2 class="text-3xl font-bold mb-3">Fale Conosco</h2>
-        <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">Desenvolvemos projetos sob medida para sua escola ou empresa.</p>
+        <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">Desenvolvemos projetos sob medida para sua escola ou empresa. Envie sua mensagem.</p>
         
         <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-xl mx-auto text-left shadow-2xl">
             <form id="form-contato" action="https://formspree.io/f/xoeekbwp" method="POST" class="space-y-4">
@@ -329,18 +328,18 @@
                 </p>
                 <p class="text-xs text-slate-500 mt-2">&copy; 2026 Elunari Tech. Todos os direitos reservados.</p>
             </div>
+            <!-- Botão WhatsApp no Rodapé (Estilo Ghost/Outline Elegante) -->
             <div class="flex items-center gap-6">
-                <a href="https://wa.me/5551989037674" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded-lg text-base font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-900/20">
+                <a href="https://wa.me/5551989037674" target="_blank" class="border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-600 hover:text-white text-emerald-400 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-950/30 hover:border-emerald-500">
                     <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
                 </a>
             </div>
         </div>
     </footer>
 
-    <!-- CAIXA DE DIÁLOGO / MODAL COMPACTADO E OTIMIZADO -->
+    <!-- MODAL DE DOWNLOAD COMPACTO -->
     <div id="modal-download" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
         <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-5 md:p-6 shadow-2xl relative animate-fade-in max-h-[95vh] overflow-y-auto">
-            <!-- Botão de Fechar -->
             <button onclick="fecharModalDownload()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
@@ -352,7 +351,6 @@
                 <h3 class="text-xl font-bold text-slate-100">Instruções para Instalação</h3>
             </div>
 
-            <!-- Aviso do Windows Defender -->
             <div class="bg-amber-950/40 border border-amber-700/80 p-3 rounded-xl mb-3 text-sm text-amber-200 leading-relaxed">
                 <strong class="font-bold text-amber-400 block mb-0.5 text-sm">
                     <i class="fa-solid fa-shield-halved"></i> Nota de Instalação (Windows Defender):
@@ -360,7 +358,6 @@
                 Conforme a configuração do seu computador, o Windows Defender pode exibir um alerta de segurança por se tratar de um software independente. Basta clicar em <strong>"Mais informações"</strong> e depois em <strong>"Executar assim mesmo"</strong>.
             </div>
 
-            <!-- Orientações de Licenciamento e Degustação -->
             <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 text-sm text-slate-200 space-y-2 mb-4 leading-relaxed">
                 <p class="font-bold text-cyan-400 text-sm">
                     <i class="fa-solid fa-key"></i> Como Ativar o Sistema da Sua Escola:
@@ -374,7 +371,6 @@
                 </div>
             </div>
 
-            <!-- ALERTA DE DISPOSITIVO MÓVEL -->
             <div id="aviso-modal-mobile" class="hidden mb-4 bg-amber-900/50 border border-amber-600 p-3 rounded-xl text-sm text-amber-200 leading-relaxed text-center">
                 <div class="font-bold text-amber-300 mb-1 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-laptop"></i> Download Permitido Apenas em Computadores
@@ -387,7 +383,6 @@
                 </div>
             </div>
 
-            <!-- Ações -->
             <div class="flex flex-col sm:flex-row gap-2.5">
                 <button onclick="fecharModalDownload()" class="w-full sm:w-1/3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-2.5 rounded-xl text-sm transition">
                     Fechar
