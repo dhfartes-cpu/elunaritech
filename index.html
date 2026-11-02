@@ -123,7 +123,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Projeto 1 (Sirene com link de download e verificação de celular) -->
+            <!-- Projeto 1 (Sirene com link de download, aviso mobile e observação do Windows Defender) -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -143,6 +143,12 @@
                             <i class="fa-solid fa-download"></i> Baixar
                         </a>
                     </div>
+                    
+                    <!-- Aviso de nota de instalação do Windows Defender -->
+                    <p class="text-[11px] text-slate-400 leading-tight bg-slate-950 p-2.5 rounded-lg border border-slate-800/80">
+                        <span class="text-cyan-400 font-semibold">Nota de Instalação:</span> O Windows Defender pode exibir um alerta de segurança por se tratar de um software independente. Basta clicar em <span class="text-slate-200 font-medium">"Mais informações"</span> e depois em <span class="text-slate-200 font-medium">"Executar assim mesmo"</span>.
+                    </p>
+
                     <!-- Aviso caso seja acessado pelo celular -->
                     <div id="aviso-mobile" class="hidden text-xs text-amber-300 bg-amber-950/60 border border-amber-800 p-2 rounded-lg text-center">
                         ⚠️ O instalador é para computadores Windows. Acesse pelo PC da escola ou <a href="https://wa.me/5551989037674" target="_blank" class="underline font-bold">fale no WhatsApp</a>!
