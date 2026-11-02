@@ -53,27 +53,19 @@
             Desenvolvimento de aplicativos nativos, automação com hardware, programação em Kotlin e construção de projetos customizados para a sua necessidade.
         </p>
 
-        <!-- BANNER PASSANDO (CARROSSEL RESPONSIVO OTIMIZADO) -->
+        <!-- CARROSSEL RESPONSIVO -->
         <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl relative mb-10">
             <div id="carousel" class="relative aspect-video sm:h-[350px] md:h-[420px] overflow-hidden flex items-center justify-center bg-slate-950">
-                
-                <!-- Slide 1 -->
                 <div class="carousel-item absolute inset-0 opacity-100 flex items-center justify-center">
                     <img src="img/imagem-1.png" alt="Projeto 1" class="w-full h-full object-contain md:object-cover">
                 </div>
-
-                <!-- Slide 2 -->
                 <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
                     <img src="img/imagem-2.png" alt="Projeto 2" class="w-full h-full object-contain md:object-cover">
                 </div>
-
-                <!-- Slide 3 -->
                 <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
                     <img src="img/imagem-3.png" alt="Projeto 3" class="w-full h-full object-contain md:object-cover">
                 </div>
-
             </div>
-            <!-- Controles do Carrossel -->
             <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
                 <button onclick="currentSlide(0)" class="w-3 h-3 rounded-full bg-slate-600 hover:bg-cyan-400 transition"></button>
                 <button onclick="currentSlide(1)" class="w-3 h-3 rounded-full bg-slate-600 hover:bg-cyan-400 transition"></button>
@@ -123,40 +115,53 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Projeto 1 (Sirene com link de download, aviso mobile e observação do Windows Defender) -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-bell"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Sirene Escolar Inteligente</h3>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                        Aplicativo desktop modular para automação de horários e sinalização de turnos escolares. Gerenciamento prático de áudios MP3 e acionamento 100% confiável para o seu campus.
-                        <br><br>
-                        <span class="text-cyan-300 font-medium">💡 Gostou do sistema? Baixe agora e entre em contato conosco via WhatsApp para conhecer nossos planos de assinatura e ativar o licenciamento completo da sua escola.</span>
-                    </p>
+            <!-- PROJETO PRINCIPAL (DISPONÍVEL AGORA): SIRENE ESCOLAR INTELIGENTE -->
+            <div class="bg-slate-900 border-2 border-cyan-500/70 rounded-2xl p-6 flex flex-col justify-between shadow-xl shadow-cyan-950/40 relative md:col-span-2 lg:col-span-3">
+                <div class="absolute -top-3.5 right-6 bg-cyan-500 text-slate-950 font-extrabold text-[11px] px-3 py-1 rounded-full uppercase tracking-wider shadow-md">
+                    Disponível para Download
                 </div>
-                <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-slate-500">Versão Windows (.exe)</span>
-                        <a href="https://github.com/dhfartes-cpu/elunaritech/releases/download/v1.0.0/Elunare.Sirene-Setup-1.0.0.exe" onclick="tratarDownload(event)" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-1.5 shadow-lg shadow-cyan-500/10">
-                            <i class="fa-solid fa-download"></i> Baixar
-                        </a>
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-slate-100">Sirene Escolar Inteligente</h3>
+                            <span class="text-xs text-cyan-400 font-semibold">Versão Windows (.exe) • Licenciamento Modular</span>
+                        </div>
                     </div>
                     
-                    <!-- Aviso de nota de instalação do Windows Defender -->
-                    <p class="text-[11px] text-slate-400 leading-tight bg-slate-950 p-2.5 rounded-lg border border-slate-800/80">
-                        <span class="text-cyan-400 font-semibold">Nota de Instalação:</span> O Windows Defender pode exibir um alerta de segurança por se tratar de um software independente. Basta clicar em <span class="text-slate-200 font-medium">"Mais informações"</span> e depois em <span class="text-slate-200 font-medium">"Executar assim mesmo"</span>.
+                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                        Aplicativo desktop modular para automação de horários e sinalização de turnos escolares. Oferece gerenciamento prático de arquivos MP3, acionamento via relé USB/Serial e autonomia 100% confiável em modo offline para a sua instituição.
                     </p>
 
-                    <!-- Aviso caso seja acessado pelo celular -->
-                    <div id="aviso-mobile" class="hidden text-xs text-amber-300 bg-amber-950/60 border border-amber-800 p-2 rounded-lg text-center">
-                        ⚠️ O instalador é para computadores Windows. Acesse pelo PC da escola ou <a href="https://wa.me/5551989037674" target="_blank" class="underline font-bold">fale no WhatsApp</a>!
+                    <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-4 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-400">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyan-400"></i> Automação total de horários
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyan-400"></i> Suporte a áudios MP3 customizados
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-cyan-400"></i> Funciona 100% offline no PC da escola
+                        </div>
                     </div>
+                </div>
+
+                <div class="pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="text-xs text-slate-400 flex items-center gap-2">
+                        <i class="fa-solid fa-gift text-emerald-400 text-sm"></i>
+                        <span>Baixe agora e ganhe <strong>15 dias de teste gratuito</strong> com suporte no WhatsApp!</span>
+                    </div>
+                    <button onclick="abrirModalDownload()" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 text-sm cursor-pointer">
+                        <i class="fa-solid fa-download"></i> Baixar Instalador Windows (.exe)
+                    </button>
                 </div>
             </div>
 
-            <!-- Projeto 2 -->
+            <!-- PROJETOS EM DESENVOLVIMENTO OU EM HOMOLOGAÇÃO -->
+
+            <!-- Passa ou Repassa -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -166,7 +171,7 @@
                         <h3 class="text-xl font-bold">Passa ou Repassa</h3>
                         <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded">EM BREVE</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-6">
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
                         Software gamificado interativo para dinamizar gincanas, quizzes escolares e revisões de conteúdo em sala de aula.
                     </p>
                 </div>
@@ -176,14 +181,14 @@
                 </div>
             </div>
 
-            <!-- Projeto 3 -->
+            <!-- Votação Online -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-check-to-slot"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Votação Online</h3>
-                    <p class="text-slate-400 text-sm mb-6">
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
                         Plataforma em tempo real para eleições de líderes de turma, debates e simulação de processos democráticos com painel de apuração ao vivo.
                     </p>
                 </div>
@@ -195,30 +200,34 @@
                 </div>
             </div>
 
-            <!-- Projeto 4 -->
+            <!-- Chamada Inteligente -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-camera"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Chamada Inteligente</h3>
-                    <p class="text-slate-400 text-sm mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                        <h3 class="text-xl font-bold">Chamada Inteligente</h3>
+                        <span class="bg-slate-800 text-slate-300 text-[10px] font-bold px-2 py-0.5 rounded">EM HOMOLOGAÇÃO</span>
+                    </div>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
                         Automação de frequência escolar utilizando reconhecimento facial local e sincronização instantânea de presença.
                     </p>
                 </div>
                 <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">Em Homologação</span>
+                    <span class="text-xs text-slate-500">Em Testes Piloto</span>
+                    <span class="text-slate-500 text-sm italic">Em Breve</span>
                 </div>
             </div>
 
-            <!-- Projeto 5 -->
+            <!-- LibrasApp -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
                         <i class="fa-solid fa-hands-asl-interpreting"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">LibrasApp</h3>
-                    <p class="text-slate-400 text-sm mb-6">
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">
                         Ferramenta de inclusão acessível com interpretação de gestos em Libras em tempo real via visão computacional mobile.
                     </p>
                 </div>
@@ -240,7 +249,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -254,7 +262,6 @@
                     <span class="text-xs text-cyan-400 font-semibold uppercase tracking-wider">Independência de Rede</span>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -268,7 +275,6 @@
                     <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider">IA & Reconhecimento</span>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500/50 transition flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -316,7 +322,6 @@
     <!-- RODAPÉ -->
     <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-400">
         <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            
             <div>
                 <p class="font-bold text-slate-100 text-base">Elunari Tech • Apps, Sistemas & Soluções Tecnológicas</p>
                 <p class="text-xs text-cyan-400 font-semibold mt-1 tracking-wide">
@@ -324,27 +329,83 @@
                 </p>
                 <p class="text-xs text-slate-500 mt-2">&copy; 2026 Elunari Tech. Todos os direitos reservados.</p>
             </div>
-
-            <!-- Contatos e Redes -->
             <div class="flex items-center gap-6">
                 <a href="https://wa.me/5551989037674" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-900/20">
                     <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
                 </a>
             </div>
-
         </div>
     </footer>
 
+    <!-- MODAL DE DOWNLOAD COM NOTA DE INSTALAÇÃO E DEGUSTAÇÃO -->
+    <div id="modal-download" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative animate-fade-in">
+            <!-- Botão de Fechar -->
+            <button onclick="fecharModalDownload()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 bg-cyan-500/10 text-cyan-400 rounded-lg flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-100">Instruções para Instalação</h3>
+            </div>
+
+            <!-- Aviso do Windows Defender -->
+            <div class="bg-amber-950/40 border border-amber-800/80 p-3.5 rounded-xl mb-4 text-xs text-amber-200 leading-relaxed">
+                <strong class="font-bold text-amber-400 block mb-1">
+                    <i class="fa-solid fa-shield-halved"></i> Nota de Instalação (Windows Defender):
+                </strong>
+                Conforme a configuração do seu computador, o Windows Defender pode exibir um alerta de segurança por se tratar de um software independente. Basta clicar em <strong>"Mais informações"</strong> e depois em <strong>"Executar assim mesmo"</strong>.
+            </div>
+
+            <!-- Orientações de Licenciamento e Degustação -->
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2 mb-6">
+                <p class="font-semibold text-cyan-400">
+                    <i class="fa-solid fa-key"></i> Como Ativar o Sistema da Sua Escola:
+                </p>
+                <p>
+                    Após realizar o download e concluir a instalação no computador da escola, entre em contato conosco via WhatsApp para conhecer nossos planos.
+                </p>
+                <div class="p-2.5 bg-emerald-950/50 border border-emerald-800/70 rounded-lg text-emerald-300 text-[11px] font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-gift text-sm"></i>
+                    <span><strong>Degustação de 15 Dias:</strong> Ao nos chamar no WhatsApp, você receberá um código de validação sem custo para testar o sistema completo na sua escola durante 15 dias!</span>
+                </div>
+            </div>
+
+            <!-- Ações -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="fecharModalDownload()" class="w-full sm:w-1/3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold py-2.5 rounded-xl text-sm transition">
+                    Cancelar
+                </button>
+                <a id="btn-confirmar-download" href="https://github.com/dhfartes-cpu/elunaritech/releases/download/v1.0.0/Elunare.Sirene-Setup-1.0.0.exe" onclick="confirmarEDownload(event)" target="_blank" class="w-full sm:w-2/3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2 text-center shadow-lg shadow-cyan-500/10">
+                    <i class="fa-solid fa-download"></i> Confirmar e Baixar Agora
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- SCRIPTS -->
     <script>
-        // Função inteligente para checar se é dispositivo móvel ao clicar em baixar
-        function tratarDownload(event) {
+        // Funções do Modal de Download
+        function abrirModalDownload() {
+            document.getElementById("modal-download").classList.remove("hidden");
+        }
+
+        function fecharModalDownload() {
+            document.getElementById("modal-download").classList.add("hidden");
+        }
+
+        function confirmarEDownload(event) {
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             if (isMobile) {
-                event.preventDefault(); // Impede o clique direto no link do .exe
-                const aviso = document.getElementById("aviso-mobile");
-                aviso.classList.remove("hidden"); // Mostra o aviso na hora para o usuário
+                event.preventDefault();
+                alert("⚠️ O instalador é voltado para computadores Windows. Acesse pelo PC da escola ou entre em contato pelo WhatsApp!");
             }
+            setTimeout(() => {
+                fecharModalDownload();
+            }, 800);
         }
 
         // Carrossel
