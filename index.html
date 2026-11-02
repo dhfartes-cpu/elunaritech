@@ -32,8 +32,8 @@
                 <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
             </nav>
             <a href="https://wa.me/5551989037674" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-900/20">
-    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
-</a>
+                <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+            </a>
         </div>
     </header>
 
@@ -53,23 +53,23 @@
             Desenvolvimento de aplicativos nativos, automação com hardware, programação em Kotlin e construção de projetos customizados para a sua necessidade.
         </p>
 
-        <!-- BANNER PASSANDO (CARROSSEL COM AS SUAS IMAGENS DA PASTA IMG) -->
+        <!-- BANNER PASSANDO (CARROSSEL RESPONSIVO OTIMIZADO) -->
         <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl relative mb-10">
-            <div id="carousel" class="relative h-72 md:h-[420px] overflow-hidden flex items-center justify-center">
+            <div id="carousel" class="relative aspect-video sm:h-[350px] md:h-[420px] overflow-hidden flex items-center justify-center bg-slate-950">
                 
                 <!-- Slide 1 -->
-                <div class="carousel-item absolute inset-0 opacity-100 flex items-center justify-center bg-slate-950">
-                    <img src="img/imagem-1.png" alt="Projeto 1" class="w-full h-full object-cover">
+                <div class="carousel-item absolute inset-0 opacity-100 flex items-center justify-center">
+                    <img src="img/imagem-1.png" alt="Projeto 1" class="w-full h-full object-contain md:object-cover">
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center bg-slate-900">
-                    <img src="img/imagem-2.png" alt="Projeto 2" class="w-full h-full object-cover">
+                <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
+                    <img src="img/imagem-2.png" alt="Projeto 2" class="w-full h-full object-contain md:object-cover">
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center bg-slate-950">
-                    <img src="img/imagem-3.png" alt="Projeto 3" class="w-full h-full object-cover">
+                <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
+                    <img src="img/imagem-3.png" alt="Projeto 3" class="w-full h-full object-contain md:object-cover">
                 </div>
 
             </div>
@@ -123,7 +123,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- Projeto 1 (Sirene com link de download configurado para a Release do GitHub) -->
+            <!-- Projeto 1 (Sirene com link de download e verificação de celular) -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -136,12 +136,17 @@
                         <span class="text-cyan-300 font-medium">💡 Gostou do sistema? Baixe agora e entre em contato conosco via WhatsApp para conhecer nossos planos de assinatura e ativar o licenciamento completo da sua escola.</span>
                     </p>
                 </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
-                    <span class="text-xs text-slate-500">Versão Windows (.exe)</span>
-                    <!-- SUBSTITUA 'SEU-USUARIO' PELO SEU USUÁRIO REAL DO GITHUB -->
-                    <a href="https://github.com/dhfartes-cpu/elunaritech/releases/download/v1.0.0/Elunare.Sirene-Setup-1.0.0.exe" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-1.5 shadow-lg shadow-cyan-500/10">
-    <i class="fa-solid fa-download"></i> Baixar
-</a>
+                <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-slate-500">Versão Windows (.exe)</span>
+                        <a href="https://github.com/dhfartes-cpu/elunaritech/releases/download/v1.0.0/Elunare.Sirene-Setup-1.0.0.exe" onclick="tratarDownload(event)" target="_blank" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold px-4 py-2 rounded-lg text-sm transition flex items-center gap-1.5 shadow-lg shadow-cyan-500/10">
+                            <i class="fa-solid fa-download"></i> Baixar
+                        </a>
+                    </div>
+                    <!-- Aviso caso seja acessado pelo celular -->
+                    <div id="aviso-mobile" class="hidden text-xs text-amber-300 bg-amber-950/60 border border-amber-800 p-2 rounded-lg text-center">
+                        ⚠️ O instalador é para computadores Windows. Acesse pelo PC da escola ou <a href="https://wa.me/5551989037674" target="_blank" class="underline font-bold">fale no WhatsApp</a>!
+                    </div>
                 </div>
             </div>
 
@@ -280,7 +285,7 @@
         <p class="text-slate-400 mb-10 max-w-xl mx-auto">Desenvolvemos projetos sob medida para sua escola ou empresa. Envie sua mensagem.</p>
         
         <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-xl mx-auto text-left shadow-2xl">
-            <form action="https://formspree.io/f/xoeekbwp" method="POST" class="space-y-4">
+            <form id="form-contato" action="https://formspree.io/f/xoeekbwp" method="POST" class="space-y-4">
                 <div>
                     <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">Nome / Instituição</label>
                     <input type="text" name="nome" placeholder="Ex: Escola / Empresa..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500">
@@ -293,9 +298,11 @@
                     <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">Mensagem</label>
                     <textarea name="mensagem" rows="4" placeholder="Como podemos ajudar no seu projeto?" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3 rounded-xl transition shadow-lg shadow-cyan-500/10">
+                <button type="submit" id="btn-enviar" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3 rounded-xl transition shadow-lg shadow-cyan-500/10">
                     Enviar Mensagem
                 </button>
+                
+                <div id="form-status" class="hidden text-center p-3 rounded-xl text-sm font-semibold"></div>
             </form>
         </div>
     </section>
@@ -315,15 +322,26 @@
             <!-- Contatos e Redes -->
             <div class="flex items-center gap-6">
                 <a href="https://wa.me/5551989037674" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-900/20">
-    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
-</a>
+                    <i class="fa-brands fa-whatsapp text-base"></i> WhatsApp
+                </a>
             </div>
 
         </div>
     </footer>
 
-    <!-- SCRIPT DO CARROSSEL -->
+    <!-- SCRIPTS -->
     <script>
+        // Função inteligente para checar se é dispositivo móvel ao clicar em baixar
+        function tratarDownload(event) {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                event.preventDefault(); // Impede o clique direto no link do .exe
+                const aviso = document.getElementById("aviso-mobile");
+                aviso.classList.remove("hidden"); // Mostra o aviso na hora para o usuário
+            }
+        }
+
+        // Carrossel
         let currentIdx = 0;
         const items = document.querySelectorAll('.carousel-item');
         const dots = document.querySelectorAll('#carousel + div button');
@@ -348,6 +366,52 @@
         }, 4000);
 
         showSlide(0);
+
+        // Envio do Formulário sem sair da página
+        const form = document.getElementById("form-contato");
+        const status = document.getElementById("form-status");
+        const btn = document.getElementById("btn-enviar");
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const data = new FormData(event.target);
+            btn.disabled = true;
+            btn.innerText = "Enviando...";
+
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.classList.remove("hidden", "bg-red-900/50", "text-red-300");
+                    status.classList.add("bg-emerald-900/50", "text-emerald-300", "border", "border-emerald-700");
+                    status.innerHTML = "✅ Mensagem enviada com sucesso! Em breve entraremos em contato.";
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Ops! Ocorreu um problema ao enviar o formulário.";
+                        }
+                    });
+                    status.classList.remove("hidden", "bg-emerald-900/50", "text-emerald-300");
+                    status.classList.add("bg-red-900/50", "text-red-300", "border", "border-red-700");
+                }
+            }).catch(error => {
+                status.innerHTML = "Ops! Ocorreu um problema de conexão.";
+                status.classList.remove("hidden");
+                status.classList.add("bg-red-900/50", "text-red-300");
+            }).finally(() => {
+                btn.disabled = false;
+                btn.innerText = "Enviar Mensagem";
+            });
+        }
+
+        form.addEventListener("submit", handleSubmit);
     </script>
 </body>
 </html>
