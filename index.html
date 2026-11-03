@@ -15,7 +15,7 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased text-base">
 
-    <!-- CABEÇALHO / MENU (Agora rola junto com a página) -->
+    <!-- CABEÇALHO / MENU -->
     <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
             <a href="#inicio" class="flex flex-col py-1">
@@ -31,7 +31,6 @@
                 <a href="#pesquisa" class="hover:text-cyan-400 transition">Pesquisa & P&D</a>
                 <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
             </nav>
-            <!-- Botão WhatsApp no Cabeçalho (Tamanho idêntico ao do rodapé) -->
             <div class="flex items-center">
                 <a href="https://wa.me/5551989037674" target="_blank" class="border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-600 hover:text-white text-emerald-400 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-950/30 hover:border-emerald-500">
                     <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
@@ -118,7 +117,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             
-            <!-- PROJETO PRINCIPAL: SIRENE ESCOLAR INTELIGENTE -->
+            <!-- PROJETO PRINCIPAL: SIRENE ESCOLAR INTELIGENTE (Ocupa 3 colunas no topo para destaque) -->
             <div class="bg-slate-900 border-2 border-cyan-500/70 rounded-2xl p-7 flex flex-col justify-between shadow-xl shadow-cyan-950/40 relative md:col-span-2 lg:col-span-3">
                 <div class="absolute -top-3.5 right-6 bg-cyan-500 text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md">
                     Disponível para Download
@@ -162,7 +161,49 @@
                 </div>
             </div>
 
-            <!-- Passa ou Repassa -->
+            <!-- DEMAIS PROJETOS EM FORMATO DE BLOCOS / QUADRADINHOS PADRÃO (1 coluna cada) -->
+
+            <!-- 1. Gestão Bibliotecária Universitária (NOVO) -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition">
+                <div>
+                    <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <h3 class="text-xl font-bold">Biblioteca Universitária</h3>
+                        <span class="bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold px-2 py-0.5 rounded">EM DESENVOLVIMENTO</span>
+                    </div>
+                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                        Plataforma híbrida para catalogação, empréstimos e consulta de acervos acadêmicos. Funciona em servidor local para alta performance e sincroniza com aplicativo em nuvem.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                    <span class="text-cyan-400 font-medium">Servidor Local & Nuvem</span>
+                    <span class="text-slate-500 italic">Em Breve</span>
+                </div>
+            </div>
+
+            <!-- 2. Reserva de Espaços (NOVO) -->
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
+                <div>
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2">
+                        <h3 class="text-xl font-bold">Reserva de Espaços</h3>
+                        <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold px-2 py-0.5 rounded">EM BREVE</span>
+                    </div>
+                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                        Aplicativo em nuvem para agendamento de laboratórios, salas de vídeo e auditórios. Permite reservas instantâneas em tempo real pelo professor de qualquer local.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                    <span class="text-emerald-400 font-medium">Plataforma Cloud</span>
+                    <span class="text-slate-500 italic">Em Breve</span>
+                </div>
+            </div>
+
+            <!-- 3. Passa ou Repassa -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -182,7 +223,7 @@
                 </div>
             </div>
 
-            <!-- Votação Online -->
+            <!-- 4. Votação Online -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -201,7 +242,7 @@
                 </div>
             </div>
 
-            <!-- Chamada Inteligente -->
+            <!-- 5. Chamada Inteligente -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -221,7 +262,7 @@
                 </div>
             </div>
 
-            <!-- LibrasApp -->
+            <!-- 6. LibrasApp -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
                 <div>
                     <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
@@ -330,7 +371,6 @@
                 </p>
                 <p class="text-xs text-slate-500 mt-2">&copy; 2026 Elunari Tech. Todos os direitos reservados.</p>
             </div>
-            <!-- Botão WhatsApp no Rodapé -->
             <div class="flex items-center gap-6">
                 <a href="https://wa.me/5551989037674" target="_blank" class="border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-600 hover:text-white text-emerald-400 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-950/30 hover:border-emerald-500">
                     <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp
@@ -339,7 +379,7 @@
         </div>
     </footer>
 
-    <!-- MODAL DE DOWNLOAD COMPACTO -->
+    <!-- MODAL DE DOWNLOAD -->
     <div id="modal-download" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
         <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-5 md:p-6 shadow-2xl relative animate-fade-in max-h-[95vh] overflow-y-auto">
             <button onclick="fecharModalDownload()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
@@ -369,7 +409,7 @@
                 </p>
                 <div class="p-3 bg-emerald-950/60 border border-emerald-700 rounded-xl text-emerald-300 text-sm font-medium flex items-start gap-2.5">
                     <i class="fa-solid fa-gift text-base mt-0.5 text-emerald-400"></i>
-                    <span>Temos opção de degustação de 7 Dias: Você receberá um código de validação gratuito para testar o sistema completo durante 15 dias sem compromisso!</span>
+                    <span>Temos opção de degustação de 7 Dias: Você receberá um código de validação gratuito para testar o sistema completo durante 7 dias sem compromisso!</span>
                 </div>
             </div>
 
@@ -479,7 +519,7 @@
                         }
                     });
                     status.classList.remove("hidden", "bg-emerald-900/50", "text-emerald-300");
-                    status.classList.add("bg-red-900/50", "text-red-300", "border", "border-red-700");
+                    status.classList.add("red-900/50", "text-red-300", "border", "border-red-700");
                 }
             }).catch(error => {
                 status.innerHTML = "Ops! Ocorreu um problema de conexão.";
