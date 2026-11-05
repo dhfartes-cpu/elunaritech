@@ -13,23 +13,22 @@
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased text-base">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased text-base min-h-screen flex flex-col justify-between">
 
-    <!-- CABEÇALHO / MENU -->
-    <header class="bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <!-- CABEÇALHO / MENU FIXO (STICKY) -->
+    <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="#inicio" class="flex flex-col py-1">
+            <button onclick="navegarPara('pagina-principal')" class="flex flex-col py-1 text-left focus:outline-none cursor-pointer">
                 <span class="text-xl font-extrabold tracking-wide bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     Elunari Tech
                 </span>
                 <span class="text-xs text-slate-400 -mt-1 hidden sm:block font-medium">Apps, Sistemas & Soluções Tecnológicas</span>
-            </a>
+            </button>
             <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
-                <a href="#inicio" class="hover:text-cyan-400 transition">Início</a>
-                <a href="#sobre" class="hover:text-cyan-400 transition">Quem Somos</a>
-                <a href="#projetos" class="hover:text-cyan-400 transition">Softwares & Downloads</a>
-                <a href="#pesquisa" class="hover:text-cyan-400 transition">Pesquisa & P&D</a>
-                <a href="#contato" class="hover:text-cyan-400 transition">Contato</a>
+                <button onclick="navegarPara('pagina-principal')" class="btn-nav hover:text-cyan-400 transition text-cyan-400 cursor-pointer" id="nav-principal">Início / Softwares</button>
+                <button onclick="navegarPara('pagina-sobre')" class="btn-nav hover:text-cyan-400 transition cursor-pointer" id="nav-sobre">Quem Somos</button>
+                <button onclick="navegarPara('pagina-pesquisa')" class="btn-nav hover:text-cyan-400 transition cursor-pointer" id="nav-pesquisa">Pesquisa e Inovação</button>
+                <a href="#contato" onclick="navegarPara('pagina-principal')" class="hover:text-cyan-400 transition">Contato</a>
             </nav>
             <div class="flex items-center">
                 <a href="https://wa.me/5551989037674" target="_blank" class="border border-emerald-500/40 bg-emerald-950/30 hover:bg-emerald-600 hover:text-white text-emerald-400 px-4 py-2 rounded-xl text-sm font-semibold transition flex items-center gap-2 shadow-lg shadow-emerald-950/30 hover:border-emerald-500">
@@ -39,327 +38,338 @@
         </div>
     </header>
 
-    <!-- BANNER / INÍCIO -->
-    <section id="inicio" class="relative py-16 md:py-24 px-4 max-w-6xl mx-auto flex flex-col items-center text-center">
-        <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950"></div>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="flex-grow">
         
-        <span class="px-4 py-1.5 mb-4 text-sm font-semibold tracking-wider text-cyan-400 uppercase bg-cyan-950 border border-cyan-800 rounded-full">
-            Engenharia de Software, Hardware & Inovação Educacional
-        </span>
-        
-        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-4xl mb-4 leading-tight">
-            Soluções Tecnológicas Sob Medida para <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Escolas e Empresas</span>
-        </h1>
-        
-        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-10">
-            Desenvolvimento de aplicativos nativos, automação com hardware, programação em Kotlin e construção de projetos customizados para a sua necessidade.
-        </p>
-
-        <!-- CARROSSEL RESPONSIVO -->
-        <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl relative mb-10">
-            <div id="carousel" class="relative aspect-video sm:h-[350px] md:h-[420px] overflow-hidden flex items-center justify-center bg-slate-950">
-                <div class="carousel-item absolute inset-0 opacity-100 flex items-center justify-center">
-                    <img src="img/imagem-1.png" alt="Projeto 1" class="w-full h-full object-contain md:object-cover">
-                </div>
-                <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
-                    <img src="img/imagem-2.png" alt="Projeto 2" class="w-full h-full object-contain md:object-cover">
-                </div>
-                <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
-                    <img src="img/imagem-3.png" alt="Projeto 3" class="w-full h-full object-contain md:object-cover">
-                </div>
-            </div>
-            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
-                <button onclick="currentSlide(0)" class="w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition"></button>
-                <button onclick="currentSlide(1)" class="w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition"></button>
-                <button onclick="currentSlide(2)" class="w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition"></button>
-            </div>
-        </div>
-
-        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-            <a href="#projetos" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-base shadow-lg shadow-cyan-500/10">
-                <i class="fa-solid fa-download"></i> Ver Softwares e Downloads
-            </a>
-        </div>
-    </section>
-
-    <!-- QUEM SOMOS -->
-    <section id="sobre" class="py-20 bg-slate-900/40 border-y border-slate-800/60 px-4">
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-                <h2 class="text-3xl font-bold mb-6 text-cyan-400">Sobre a Elunari Tech</h2>
-                <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-4">
-                    Atuamos no desenvolvimento de aplicações eficientes, unindo engenharia de software nativa, integração de hardware e ferramentas inovadoras para o ecossistema educacional e corporativo.
+        <!-- PÁGINA 1: PRINCIPAL / INÍCIO / SOFTWARES -->
+        <div id="pagina-principal" class="secao-pagina">
+            <!-- BANNER / INÍCIO -->
+            <section class="relative py-16 md:py-24 px-4 max-w-6xl mx-auto flex flex-col items-center text-center">
+                <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-cyan-900/20 via-slate-950 to-slate-950"></div>
+                
+                <span class="px-4 py-1.5 mb-4 text-sm font-semibold tracking-wider text-cyan-400 uppercase bg-cyan-950 border border-cyan-800 rounded-full">
+                    Engenharia de Software, Hardware & Inovação Educacional
+                </span>
+                
+                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight max-w-4xl mb-4 leading-tight">
+                    Soluções Tecnológicas Sob Medida para <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Escolas e Empresas</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-10">
+                    Desenvolvimento de aplicativos nativos, automação com hardware, programação em Kotlin e construção de projetos customizados para a sua necessidade.
                 </p>
-                <p class="text-slate-400 text-base md:text-lg leading-relaxed mb-6">
-                    Desenvolvemos soluções robustas com arquitetura *offline-first* para garantir máxima estabilidade e autonomia local, assim como plataformas conectadas com servidores em tempo real.
-                </p>
-            </div>
-            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative shadow-xl">
-                <div class="bg-slate-950 p-4 rounded-lg font-mono text-sm text-cyan-300 overflow-x-auto border border-slate-800/80">
-                    <p class="text-slate-500">// Elunari Tech Architecture</p>
-                    <p class="text-pink-400">import</p> { SireneControl, RealtimeVote } <p class="text-pink-400">from</p> <p class="text-emerald-300">'@elunaritech/core'</p>;
-                    <br><br>
-                    <p class="text-slate-300"><span class="text-blue-400">const</span> engine = <span class="text-blue-400">new</span> ElunariEngine({</p>
-                    <p class="pl-4 text-slate-300">hardware: <span class="text-emerald-300">'Relé USB/Serial'</span>,</p>
-                    <p class="pl-4 text-slate-300">mode: <span class="text-emerald-300">'Offline-First & Realtime Cloud'</span></p>
-                    <p class="text-slate-300">});</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- PROJETOS & DOWNLOADS -->
-    <section id="projetos" class="py-20 px-4 max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold mb-3">Catálogo de Softwares & Downloads</h2>
-            <p class="text-slate-300 text-lg max-w-xl mx-auto">Ferramentas prontas para download e aplicações desenvolvidas sob encomenda.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            
-            <!-- PROJETO PRINCIPAL: SIRENE ESCOLAR INTELIGENTE (Ocupa 3 colunas no topo para destaque) -->
-            <div class="bg-slate-900 border-2 border-cyan-500/70 rounded-2xl p-7 flex flex-col justify-between shadow-xl shadow-cyan-950/40 relative md:col-span-2 lg:col-span-3">
-                <div class="absolute -top-3.5 right-6 bg-cyan-500 text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md">
-                    Disponível para Download
-                </div>
-                <div>
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl">
-                            <i class="fa-solid fa-bell"></i>
+                <!-- CARROSSEL RESPONSIVO -->
+                <div class="w-full max-w-4xl bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl relative mb-10">
+                    <div id="carousel" class="relative aspect-video sm:h-[350px] md:h-[420px] overflow-hidden flex items-center justify-center bg-slate-950">
+                        <div class="carousel-item absolute inset-0 opacity-100 flex items-center justify-center">
+                            <img src="img/imagem-1.png" alt="Projeto 1" class="w-full h-full object-contain md:object-cover">
                         </div>
-                        <div>
-                            <h3 class="text-2xl md:text-3xl font-bold text-slate-100">Sirene Escolar Inteligente</h3>
-                            <span class="text-sm text-cyan-400 font-semibold">Versão Windows (.exe) • Licenciamento Modular</span>
+                        <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
+                            <img src="img/imagem-2.png" alt="Projeto 2" class="w-full h-full object-contain md:object-cover">
+                        </div>
+                        <div class="carousel-item absolute inset-0 opacity-0 flex items-center justify-center">
+                            <img src="img/imagem-3.png" alt="Projeto 3" class="w-full h-full object-contain md:object-cover">
                         </div>
                     </div>
-                    
-                    <p class="text-slate-200 text-lg mb-6 leading-relaxed">
-                        Aplicativo desktop modular para automação de horários e sinalização de turnos escolares. Oferece gerenciamento prático de arquivos MP3 com autonomia 100% confiável em modo offline (não precisa de internet), para a sua instituição.
-                    </p>
-
-                    <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-base text-slate-300">
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-check text-cyan-400 text-lg"></i> Automação total de horários
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-check text-cyan-400 text-lg"></i> Suporte a áudios MP3 customizados
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-check text-cyan-400 text-lg"></i> Funciona 100% offline no PC da escola
-                        </div>
+                    <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+                        <button onclick="currentSlide(0)" class="w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition cursor-pointer"></button>
+                        <button onclick="currentSlide(1)" class="w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition cursor-pointer"></button>
+                        <button onclick="currentSlide(2)" class="w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition cursor-pointer"></button>
                     </div>
                 </div>
 
-                <div class="pt-5 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                    <div class="text-sm md:text-base text-slate-300 flex items-center gap-2">
-                        <i class="fa-solid fa-gift text-emerald-400 text-lg"></i>
-                        <span>Baixe agora e ganhe <strong>7 dias de teste gratuito</strong> com nosso suporte</span>
-                    </div>
-                    <button onclick="abrirModalDownload()" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 text-base cursor-pointer">
-                        <i class="fa-solid fa-download"></i> Baixar Instalador Windows (.exe)
-                    </button>
-                </div>
-            </div>
-
-            <!-- DEMAIS PROJETOS EM FORMATO DE BLOCOS / QUADRADINHOS PADRÃO (1 coluna cada) -->
-
-            <!-- 1. Gestão Bibliotecária Universitária (NOVO) -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-book-bookmark"></i>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-bold">Biblioteca Universitária</h3>
-                        <span class="bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold px-2 py-0.5 rounded">EM DESENVOLVIMENTO</span>
-                    </div>
-                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
-                        Plataforma híbrida para catalogação, empréstimos e consulta de acervos acadêmicos. Funciona em servidor local para alta performance e sincroniza com aplicativo em nuvem.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
-                    <span class="text-cyan-400 font-medium">Servidor Local & Nuvem</span>
-                    <span class="text-slate-500 italic">Em Breve</span>
-                </div>
-            </div>
-
-            <!-- 2. Reserva de Espaços (NOVO) -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-calendar-check"></i>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-bold">Reserva de Espaços</h3>
-                        <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold px-2 py-0.5 rounded">EM BREVE</span>
-                    </div>
-                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
-                        Aplicativo em nuvem para agendamento de laboratórios, salas de vídeo e auditórios. Permite reservas instantâneas em tempo real pelo professor de qualquer local.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
-                    <span class="text-emerald-400 font-medium">Plataforma Cloud</span>
-                    <span class="text-slate-500 italic">Em Breve</span>
-                </div>
-            </div>
-
-            <!-- 3. Passa ou Repassa -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-gamepad"></i>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-bold">Gamificação Passa ou Repassa</h3>
-                        <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold px-2 py-0.5 rounded">EM BREVE</span>
-                    </div>
-                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
-                        Software gamificado interativo para dinamizar gincanas, quizzes escolares e revisões de conteúdo em sala de aula.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
-                    <span class="text-emerald-400 font-medium">Em Melhorias (.html)</span>
-                    <span class="text-slate-500 italic">Em Breve</span>
-                </div>
-            </div>
-
-            <!-- 4. Votação Online -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-check-to-slot"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Votação Online</h3>
-                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
-                        Plataforma em tempo real para eleições de líderes de turma, debates e simulação de processos democráticos com painel de apuração ao vivo.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
-                    <span class="text-purple-400 font-medium">Servidor Nuvem</span>
-                    <a href="#contato" class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1">
-                        Testar / Conhecer <i class="fa-solid fa-arrow-right"></i>
+                <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+                    <a href="#projetos" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-base shadow-lg shadow-cyan-500/10">
+                        <i class="fa-solid fa-download"></i> Ver Softwares e Downloads
                     </a>
                 </div>
-            </div>
+            </section>
 
-            <!-- 5. Chamada Inteligente -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-camera"></i>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2">
-                        <h3 class="text-xl font-bold">Chamada Inteligente</h3>
-                        <span class="bg-slate-800 text-slate-300 text-xs font-bold px-2 py-0.5 rounded">EM HOMOLOGAÇÃO</span>
-                    </div>
-                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
-                        Automação de frequência escolar utilizando reconhecimento facial, QRCode local e sincronização instantânea de presença.
-                    </p>
+            <!-- PROJETOS & DOWNLOADS -->
+            <section id="projetos" class="py-20 px-4 max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-3">Catálogo de Softwares & Downloads</h2>
+                    <p class="text-slate-300 text-lg max-w-xl mx-auto">Ferramentas prontas para download e aplicações desenvolvidas sob encomenda.</p>
                 </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
-                    <span class="text-slate-400">Em Testes Piloto</span>
-                    <span class="text-slate-500 italic">Em Breve</span>
-                </div>
-            </div>
 
-            <!-- 6. LibrasApp -->
-            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
-                <div>
-                    <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                        <i class="fa-solid fa-hands-asl-interpreting"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">LibrasApp</h3>
-                    <p class="text-slate-300 text-base mb-6 leading-relaxed">
-                        Ferramenta de inclusão acessível com interpretação de gestos em Libras em tempo real via visão computacional mobile.
-                    </p>
-                </div>
-                <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
-                    <span class="text-amber-400">Em Pesquisa & Dev</span>
-                    <span class="text-slate-500 italic">Em Breve</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- PESQUISA & P&D -->
-    <section id="pesquisa" class="py-20 bg-slate-900/40 border-y border-slate-800/60 px-4">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-3 text-cyan-400">Pesquisa & Inovação (P&D)</h2>
-                <p class="text-slate-300 text-lg max-w-xl mx-auto">Investigação contínua aplicada ao desenvolvimento de tecnologias educacionais.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-database"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- PROJETO PRINCIPAL: SIRENE ESCOLAR INTELIGENTE -->
+                    <div class="bg-slate-900 border-2 border-cyan-500/70 rounded-2xl p-7 flex flex-col justify-between shadow-xl shadow-cyan-950/40 relative md:col-span-2 lg:col-span-3">
+                        <div class="absolute -top-3.5 right-6 bg-cyan-500 text-slate-950 font-extrabold text-xs px-3.5 py-1 rounded-full uppercase tracking-wider shadow-md">
+                            Disponível para Download
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-100">Sistemas Offline-First</h3>
-                        <p class="text-slate-300 text-base leading-relaxed mb-4">
-                            Arquitetura voltada à autonomia de dados locais. Seus sistemas continuam operando perfeitamente mesmo sem conexão com a internet, garantindo segurança e velocidade.
-                        </p>
-                    </div>
-                    <span class="text-xs text-cyan-400 font-semibold uppercase tracking-wider">Independência de Rede</span>
-                </div>
+                        <div>
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-14 h-14 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-2xl">
+                                    <i class="fa-solid fa-bell"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl md:text-3xl font-bold text-slate-100">Sirene Escolar Inteligente</h3>
+                                    <span class="text-sm text-cyan-400 font-semibold">Versão Windows (.exe) • Licenciamento Modular</span>
+                                </div>
+                            </div>
+                            
+                            <p class="text-slate-200 text-lg mb-6 leading-relaxed">
+                                Aplicativo desktop modular para automação de horários e sinalização de turnos escolares. Oferece gerenciamento prático de arquivos MP3 com autonomia 100% confiável em modo offline (não precisa de internet), para a sua instituição.
+                            </p>
 
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-eye"></i>
+                            <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 mb-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-base text-slate-300">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-cyan-400 text-lg"></i> Automação total de horários
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-cyan-400 text-lg"></i> Suporte a áudios MP3 customizados
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-check text-cyan-400 text-lg"></i> Funciona 100% offline no PC da escola
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-100">Visão Computacional Aplicada</h3>
-                        <p class="text-slate-300 text-base leading-relaxed mb-4">
-                            Processamento de imagens por inteligência artificial para reconhecimento facial em chamadas escolares e interpretação gestual voltada à acessibilidade.
-                        </p>
-                    </div>
-                    <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider">IA & Reconhecimento</span>
-                </div>
 
-                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500/50 transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
-                            <i class="fa-solid fa-microchip"></i>
+                        <div class="pt-5 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="text-sm md:text-base text-slate-300 flex items-center gap-2">
+                                <i class="fa-solid fa-gift text-emerald-400 text-lg"></i>
+                                <span>Baixe agora e ganhe <strong>7 dias de teste gratuito</strong> com nosso suporte</span>
+                            </div>
+                            <button onclick="abrirModalDownload()" class="w-full sm:w-auto bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-7 py-3.5 rounded-xl transition flex items-center justify-center gap-2 shadow-lg shadow-cyan-500/20 text-base cursor-pointer">
+                                <i class="fa-solid fa-download"></i> Baixar Instalador Windows (.exe)
+                            </button>
                         </div>
-                        <h3 class="text-xl font-bold mb-2 text-slate-100">Automação Escolar</h3>
-                        <p class="text-slate-300 text-base leading-relaxed mb-4">
-                            Integração de hardware físico e software desktop para controle automatizado de sirenes, campainhas e dispositivos de controle de acesso institucional.
-                        </p>
                     </div>
-                    <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Hardware & Software</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="py-20 px-4 max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-3">Fale Conosco</h2>
-        <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">Desenvolvemos projetos sob medida para sua escola ou empresa. Envie sua mensagem.</p>
-        
-        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-xl mx-auto text-left shadow-2xl">
-            <form id="form-contato" action="https://formspree.io/f/xoeekbwp" method="POST" class="space-y-4">
-                <div>
-                    <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">Nome / Instituição</label>
-                    <input type="text" name="nome" placeholder="Ex: Escola / Empresa..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 text-base">
+                    <!-- DEMAIS PROJETOS -->
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-cyan-500/50 transition">
+                        <div>
+                            <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-xl font-bold">Biblioteca Universitária</h3>
+                                <span class="bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold px-2 py-0.5 rounded">EM DESENVOLVIMENTO</span>
+                            </div>
+                            <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                                Plataforma híbrida para catalogação, empréstimos e consulta de acervos acadêmicos. Funciona em servidor local para alta performance e sincroniza com aplicativo em nuvem.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                            <span class="text-cyan-400 font-medium">Servidor Local & Nuvem</span>
+                            <span class="text-slate-500 italic">Em Breve</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
+                        <div>
+                            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-calendar-check"></i>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-xl font-bold">Reserva de Espaços</h3>
+                                <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold px-2 py-0.5 rounded">EM BREVE</span>
+                            </div>
+                            <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                                Aplicativo em nuvem para agendamento de laboratórios, salas de vídeo e auditórios. Permite reservas instantâneas em tempo real pelo professor de qualquer local.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                            <span class="text-emerald-400 font-medium">Plataforma Cloud</span>
+                            <span class="text-slate-500 italic">Em Breve</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-emerald-500/50 transition">
+                        <div>
+                            <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-gamepad"></i>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-xl font-bold">Gamificação Passa ou Repassa</h3>
+                                <span class="bg-emerald-950 text-emerald-400 border border-emerald-800 text-xs font-bold px-2 py-0.5 rounded">EM BREVE</span>
+                            </div>
+                            <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                                Software gamificado interativo para dinamizar gincanas, quizzes escolares e revisões de conteúdo em sala de aula.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                            <span class="text-emerald-400 font-medium">Em Melhorias (.html)</span>
+                            <span class="text-slate-500 italic">Em Breve</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-purple-500/50 transition">
+                        <div>
+                            <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-check-to-slot"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">Votação Online</h3>
+                            <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                                Plataforma em tempo real para eleições de líderes de turma, debates e simulação de processos democráticos com painel de apuração ao vivo.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                            <span class="text-purple-400 font-medium">Servidor Nuvem</span>
+                            <a href="#contato" class="text-purple-400 hover:text-purple-300 font-semibold flex items-center gap-1">
+                                Testar / Conhecer <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-blue-500/50 transition">
+                        <div>
+                            <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="text-xl font-bold">Chamada Inteligente</h3>
+                                <span class="bg-slate-800 text-slate-300 text-xs font-bold px-2 py-0.5 rounded">EM HOMOLOGAÇÃO</span>
+                            </div>
+                            <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                                Automação de frequência escolar utilizando reconhecimento facial, QRCode local e sincronização instantânea de presença.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                            <span class="text-slate-400">Em Testes Piloto</span>
+                            <span class="text-slate-500 italic">Em Breve</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-500/50 transition">
+                        <div>
+                            <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-hands-asl-interpreting"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2">LibrasApp</h3>
+                            <p class="text-slate-300 text-base mb-6 leading-relaxed">
+                                Ferramenta de inclusão acessível com interpretação de gestos em Libras em tempo real via visão computacional mobile.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-base">
+                            <span class="text-amber-400">Em Pesquisa & Dev</span>
+                            <span class="text-slate-500 italic">Em Breve</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">E-mail para Contato</label>
-                    <input type="email" name="email" placeholder="seu@email.com" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 text-base">
-                </div>
-                <div>
-                    <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">Mensagem</label>
-                    <textarea name="mensagem" rows="4" placeholder="Como podemos ajudar no seu projeto?" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 text-base"></textarea>
-                </div>
-                <button type="submit" id="btn-enviar" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3.5 rounded-xl transition text-base shadow-lg shadow-cyan-500/10">
-                    Enviar Mensagem
-                </button>
+            </section>
+
+            <!-- CONTATO -->
+            <section id="contato" class="py-20 px-4 max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-3">Fale Conosco</h2>
+                <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">Desenvolvemos projetos sob medida para sua escola ou empresa. Envie sua mensagem.</p>
                 
-                <div id="form-status" class="hidden text-center p-3.5 rounded-xl text-base font-semibold"></div>
-            </form>
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 max-w-xl mx-auto text-left shadow-2xl">
+                    <form id="form-contato" action="https://formspree.io/f/xoeekbwp" method="POST" class="space-y-4">
+                        <div>
+                            <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">Nome / Instituição</label>
+                            <input type="text" name="nome" placeholder="Ex: Escola / Empresa..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 text-base">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">E-mail para Contato</label>
+                            <input type="email" name="email" placeholder="seu@email.com" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 text-base">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase font-semibold text-slate-400 mb-2">Mensagem</label>
+                            <textarea name="mensagem" rows="4" placeholder="Como podemos ajudar no seu projeto?" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-slate-100 focus:outline-none focus:border-cyan-500 text-base"></textarea>
+                        </div>
+                        <button type="submit" id="btn-enviar" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3.5 rounded-xl transition text-base shadow-lg shadow-cyan-500/10 cursor-pointer">
+                            Enviar Mensagem
+                        </button>
+                        <div id="form-status" class="hidden text-center p-3.5 rounded-xl text-base font-semibold"></div>
+                    </form>
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- PÁGINA 2: QUEM SOMOS -->
+        <div id="pagina-sobre" class="secao-pagina hidden py-16 px-4">
+            <section class="max-w-5xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-12">
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-extrabold mb-6 text-cyan-400">Sobre a Elunari Tech</h1>
+                        <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-4">
+                            Atuamos no desenvolvimento de aplicações eficientes e focadas em resultados reais, unindo engenharia de software nativa, integração de hardware e ferramentas inovadoras para o ecossistema educacional e corporativo.
+                        </p>
+                        <p class="text-slate-300 text-base md:text-lg leading-relaxed mb-4">
+                            Nossa missão é simplificar rotinas institucionais e pedagógicas com autonomia técnica, inclusão, inovação contínua e confiabilidade total dos sistemas.
+                        </p>
+                        <p class="text-slate-400 text-base leading-relaxed">
+                            Construímos soluções robustas com arquitetura <em>offline-first</em> para garantir máxima estabilidade e independência local, sem abrir mão de plataformas conectadas em tempo real quando necessário.
+                        </p>
+                    </div>
+                    <!-- Bloco de Código: Kotlin / Android Native -->
+                    <div class="bg-slate-900 p-6 rounded-2xl border border-slate-800 relative shadow-xl">
+                        <div class="flex items-center justify-between mb-3 text-xs text-slate-400 font-mono">
+                            <span>// SmartAttendanceEngine.kt</span>
+                            <span class="text-cyan-400 font-semibold">Kotlin • Android Native</span>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded-lg font-mono text-sm text-cyan-300 overflow-x-auto border border-slate-800/80 leading-relaxed">
+                            <p class="text-slate-500">// Processamento de Frequência Inteligente</p>
+                            <p class="text-pink-400">class</p> <p class="text-blue-300">AttendanceRepository</p>(<p class="text-pink-400">private val</p> db: <p class="text-purple-300">AppDatabase</p>) {
+                            <br>
+                            <p class="pl-4 text-pink-400">suspend fun</p> <p class="text-blue-300">registerPresence</p>(studentId: <p class="text-purple-300">String</p>, qrCodePayload: <p class="text-purple-300">String</p>) {
+                            <p class="pl-8 text-slate-300"><span class="text-pink-400">if</span> (qrCodePayload.isValidSignature()) {</p>
+                            <p class="pl-12 text-slate-300">db.attendanceDao().insertSync(studentId, System.currentTimeMillis())</p>
+                            <p class="pl-12 text-emerald-300">Log.d("Attendance", "Presença gravada com sucesso (Offline-First)")</p>
+                            <p class="pl-8 text-slate-300">}</p>
+                            <p class="pl-4 text-slate-300">}</p>
+                            <p class="text-slate-300">}</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PÁGINA 3: PESQUISA E INOVAÇÃO -->
+        <div id="pagina-pesquisa" class="secao-pagina hidden py-16 px-4">
+            <section class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl font-extrabold mb-3 text-cyan-400">Pesquisa & Inovação (P&D)</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl mx-auto">Investigação contínua aplicada ao desenvolvimento de tecnologias educacionais, IA e sistemas autônomos.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-cyan-500/50 transition flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-100">Sistemas Offline-First</h3>
+                            <p class="text-slate-300 text-base leading-relaxed mb-4">
+                                Arquitetura voltada à autonomia de dados locais. Seus sistemas continuam operando perfeitamente mesmo sem conexão com a internet, garantindo segurança e velocidade.
+                            </p>
+                        </div>
+                        <span class="text-xs text-cyan-400 font-semibold uppercase tracking-wider">Independência de Rede</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-blue-500/50 transition flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-eye"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-100">Visão Computacional Aplicada</h3>
+                            <p class="text-slate-300 text-base leading-relaxed mb-4">
+                                Processamento de imagens por inteligência artificial para reconhecimento facial em chamadas escolares e interpretação gestual voltada à acessibilidade.
+                            </p>
+                        </div>
+                        <span class="text-xs text-blue-400 font-semibold uppercase tracking-wider">IA & Reconhecimento</span>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500/50 transition flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 bg-purple-500/10 text-purple-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="text-xl font-bold mb-2 text-slate-100">Automação Escolar</h3>
+                            <p class="text-slate-300 text-base leading-relaxed mb-4">
+                                Integração de hardware físico e software desktop para controle automatizado de sirenes, campainhas e dispositivos de controle de acesso institucional.
+                            </p>
+                        </div>
+                        <span class="text-xs text-purple-400 font-semibold uppercase tracking-wider">Hardware & Software</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
 
     <!-- RODAPÉ -->
     <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-400">
@@ -382,7 +392,7 @@
     <!-- MODAL DE DOWNLOAD -->
     <div id="modal-download" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-3 md:p-4">
         <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-lg w-full p-5 md:p-6 shadow-2xl relative animate-fade-in max-h-[95vh] overflow-y-auto">
-            <button onclick="fecharModalDownload()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition">
+            <button onclick="fecharModalDownload()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition cursor-pointer">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
@@ -426,7 +436,7 @@
             </div>
 
             <div class="flex flex-col sm:flex-row gap-2.5">
-                <button onclick="fecharModalDownload()" class="w-full sm:w-1/3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-2.5 rounded-xl text-sm transition">
+                <button onclick="fecharModalDownload()" class="w-full sm:w-1/3 bg-slate-800 hover:bg-slate-700 text-slate-300 font-bold py-2.5 rounded-xl text-sm transition cursor-pointer">
                     Fechar
                 </button>
                 <a id="btn-confirmar-download" href="https://github.com/dhfartes-cpu/elunaritech/releases/download/v1.0.0/Elunare.Sirene-Setup-1.0.0.exe" onclick="confirmarEDownload(event)" target="_blank" class="w-full sm:w-2/3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-extrabold py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2 text-center shadow-lg shadow-cyan-500/20">
@@ -436,8 +446,25 @@
         </div>
     </div>
 
-    <!-- SCRIPTS -->
+    <!-- SCRIPTS DE NAVEGAÇÃO E CARROSSEL -->
     <script>
+        // Função de Navegação SPA
+        function navegarPara(idPagina) {
+            document.querySelectorAll('.secao-pagina').forEach(el => el.classList.add('hidden'));
+            const paginaAlvo = document.getElementById(idPagina);
+            if (paginaAlvo) {
+                paginaAlvo.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Atualiza destaque no menu
+            document.querySelectorAll('.btn-nav').forEach(btn => btn.classList.remove('text-cyan-400'));
+            if (idPagina === 'pagina-principal') document.getElementById('nav-principal').classList.add('text-cyan-400');
+            if (idPagina === 'pagina-sobre') document.getElementById('nav-sobre').classList.add('text-cyan-400');
+            if (idPagina === 'pagina-pesquisa') document.getElementById('nav-pesquisa').classList.add('text-cyan-400');
+        }
+
+        // Modal
         function abrirModalDownload() {
             document.getElementById("aviso-modal-mobile").classList.add("hidden");
             document.getElementById("modal-download").classList.remove("hidden");
@@ -471,7 +498,7 @@
                 item.style.opacity = i === index ? '1' : '0';
             });
             dots.forEach((dot, i) => {
-                dot.style.backgroundColor = i === index ? '#22d3ee' : '#475569';
+                dot.className = i === index ? 'w-3.5 h-3.5 rounded-full bg-cyan-400 transition cursor-pointer' : 'w-3.5 h-3.5 rounded-full bg-slate-600 hover:bg-cyan-400 transition cursor-pointer';
             });
             currentIdx = index;
         }
@@ -484,54 +511,6 @@
             currentIdx = (currentIdx + 1) % items.length;
             showSlide(currentIdx);
         }, 4000);
-
-        showSlide(0);
-
-        // Envio do Formulário sem sair da página
-        const form = document.getElementById("form-contato");
-        const status = document.getElementById("form-status");
-        const btn = document.getElementById("btn-enviar");
-
-        async function handleSubmit(event) {
-            event.preventDefault();
-            const data = new FormData(event.target);
-            btn.disabled = true;
-            btn.innerText = "Enviando...";
-
-            fetch(event.target.action, {
-                method: form.method,
-                body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    status.classList.remove("hidden", "bg-red-900/50", "text-red-300");
-                    status.classList.add("bg-emerald-900/50", "text-emerald-300", "border", "border-emerald-700");
-                    status.innerHTML = "✅ Mensagem enviada com sucesso! Em breve entraremos em contato.";
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                        } else {
-                            status.innerHTML = "Ops! Ocorreu um problema ao enviar o formulário.";
-                        }
-                    });
-                    status.classList.remove("hidden", "bg-emerald-900/50", "text-emerald-300");
-                    status.classList.add("red-900/50", "text-red-300", "border", "border-red-700");
-                }
-            }).catch(error => {
-                status.innerHTML = "Ops! Ocorreu um problema de conexão.";
-                status.classList.remove("hidden");
-                status.classList.add("bg-red-900/50", "text-red-300");
-            }).finally(() => {
-                btn.disabled = false;
-                btn.innerText = "Enviar Mensagem";
-            });
-        }
-
-        form.addEventListener("submit", handleSubmit);
     </script>
 </body>
 </html>
