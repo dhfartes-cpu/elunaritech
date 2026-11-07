@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GVVLN4RSQJ"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-GVVLN4RSQJ');
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elunari Tech • Apps, Sistemas & Soluções Tecnológicas</title>
@@ -261,7 +251,7 @@
                 </div>
             </section>
 
-            <!-- CONTATO -->
+            <!-- CONTATO (COM ENVIO AJAX / SEM SAIR DO SITE) -->
             <section id="contato" class="py-20 px-4 max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl font-bold mb-3">Fale Conosco</h2>
                 <p class="text-slate-300 text-lg mb-10 max-w-xl mx-auto">Desenvolvemos projetos sob medida para sua escola ou empresa. Envie sua mensagem.</p>
@@ -283,6 +273,7 @@
                         <button type="submit" id="btn-enviar" class="w-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-3.5 rounded-xl transition text-base shadow-lg shadow-cyan-500/10 cursor-pointer">
                             Enviar Mensagem
                         </button>
+                        
                         <div id="form-status" class="hidden text-center p-3.5 rounded-xl text-base font-semibold"></div>
                     </form>
                 </div>
@@ -456,7 +447,7 @@
         </div>
     </div>
 
-    <!-- SCRIPTS DE NAVEGAÇÃO E CARROSSEL -->
+    <!-- SCRIPTS DE NAVEGAÇÃO, CARROSSEL E FORMULÁRIO -->
     <script>
         // Função de Navegação SPA
         function navegarPara(idPagina) {
@@ -473,6 +464,62 @@
             if (idPagina === 'pagina-sobre') document.getElementById('nav-sobre').classList.add('text-cyan-400');
             if (idPagina === 'pagina-pesquisa') document.getElementById('nav-pesquisa').classList.add('text-cyan-400');
         }
+
+        // Script do Formulário de Contato (Ajax / Sem sair do site)
+        const form = document.getElementById("form-contato");
+        
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const status = document.getElementById("form-status");
+            const btnEnviar = document.getElementById("btn-enviar");
+            
+            btnEnviar.disabled = true;
+            btnEnviar.textContent = "Enviando...";
+
+            const data = new FormData(event.target);
+            
+            fetch(event.target.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    status.classList.remove("hidden", "bg-red-950", "text-red-400", "border", "border-red-800");
+                    status.classList.add("bg-emerald-950", "text-emerald-300", "border", "border-emerald-700");
+                    status.innerHTML = "<i class='fa-solid fa-circle-check'></i> Mensagem enviada com sucesso! Retornaremos em breve.";
+                    form.reset();
+                    btnEnviar.disabled = false;
+                    btnEnviar.textContent = "Enviar Mensagem";
+                    
+                    // Some com a mensagem de sucesso após 6 segundos
+                    setTimeout(() => {
+                        status.classList.add("hidden");
+                    }, 6000);
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.textContent = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.textContent = "Ops! Ocorreu um erro ao enviar sua mensagem.";
+                        }
+                        status.classList.remove("hidden", "bg-emerald-950", "text-emerald-300", "border", "border-emerald-700");
+                        status.classList.add("bg-red-950", "text-red-400", "border", "border-red-800");
+                        btnEnviar.disabled = false;
+                        btnEnviar.textContent = "Enviar Mensagem";
+                    })
+                }
+            }).catch(error => {
+                status.textContent = "Erro de conexão. Verifique sua internet e tente novamente.";
+                status.classList.remove("hidden", "bg-emerald-950", "text-emerald-300", "border", "border-emerald-700");
+                status.classList.add("bg-red-950", "text-red-400", "border", "border-red-800");
+                btnEnviar.disabled = false;
+                btnEnviar.textContent = "Enviar Mensagem";
+            });
+        }
+        
+        form.addEventListener("submit", handleSubmit);
 
         // Modal
         function abrirModalDownload() {
